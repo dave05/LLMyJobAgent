@@ -1,10 +1,10 @@
 import os
 import logging
 from dotenv import load_dotenv
-from job_boards.linkedin import LinkedInJobBoard
-from job_boards.indeed import IndeedJobBoard
-from job_boards.dice import DiceJobBoard
-from utils.resume_parser import ResumeParser
+from job_agent.job_boards.linkedin import LinkedInJobBoard
+from job_agent.job_boards.indeed import IndeedJobBoard
+from job_agent.job_boards.dice import DiceJobBoard
+from job_agent.utils.resume_parser import ResumeParser
 
 # Configure logging
 logging.basicConfig(
@@ -25,7 +25,7 @@ def test_all_job_boards():
         
         # Initialize resume parser
         parser = ResumeParser()
-        resume_path = "data/_Beshah, Dawit latest .pdf"  # Use the actual resume path
+        resume_path = "data/test_resume.json"  # Use the test resume file
         
         if not os.path.exists(resume_path):
             raise FileNotFoundError(f"Resume not found at {resume_path}")

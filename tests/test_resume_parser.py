@@ -1,14 +1,13 @@
 import os
 import logging
 from dotenv import load_dotenv
-from utils.resume_parser import ResumeParser
+from job_agent.utils.resume_parser import ResumeParser
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/test_resume_parser.log'),
         logging.StreamHandler()
     ]
 )
@@ -22,7 +21,7 @@ def test_resume_parser():
         
         # Initialize resume parser
         parser = ResumeParser()
-        resume_path = os.getenv('RESUME_PATH')
+        resume_path = "data/test_resume.json"  # Use the test resume file
         
         if not os.path.exists(resume_path):
             raise FileNotFoundError(f"Resume not found at {resume_path}")

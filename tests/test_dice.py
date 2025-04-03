@@ -1,5 +1,7 @@
+import os
 import pytest
 from job_agent.job_boards.dice import DiceJobBoard
+from job_agent.utils.resume_parser import ResumeParser
 
 @pytest.fixture
 def dice():

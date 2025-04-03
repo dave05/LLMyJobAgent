@@ -2,16 +2,13 @@ import os
 import logging
 from dotenv import load_dotenv
 from job_agent.job_boards.indeed import IndeedJobBoard
-from job_agent.job_boards.dice import DiceJobBoard
-from job_agent.job_boards.linkedin import LinkedInJobBoard
-from utils.resume_parser import ResumeParser
+from job_agent.utils.resume_parser import ResumeParser
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/test_job_search.log'),
         logging.StreamHandler()
     ]
 )
@@ -25,7 +22,7 @@ def test_job_search():
         
         # Initialize resume parser
         parser = ResumeParser()
-        resume_path = os.getenv('RESUME_PATH')
+        resume_path = "data/test_resume.json"
         
         if not os.path.exists(resume_path):
             raise FileNotFoundError(f"Resume not found at {resume_path}")
@@ -34,40 +31,15 @@ def test_job_search():
         logger.info("Analyzing resume...")
         resume_data = parser.parse_resume(resume_path)
         
-        # Initialize job boards
+        # Initialize job board
         indeed = IndeedJobBoard()
-        dice = DiceJobBoard()
-        linkedin = LinkedInJobBoard()
         
         # Test Indeed job search
         logger.info("Searching Indeed jobs...")
-        indeed_jobs = indeed.search_jobs(resume_data)
+        indeed_jobs = indeed.search_jobs("Software Engineer", "San Francisco", resume_data)
+        assert isinstance(indeed_jobs, list), "Job search should return a list"
         logger.info(f"Found {len(indeed_jobs)} jobs on Indeed")
         
-        # Test Dice job search
-        logger.info("Searching Dice jobs...")
-        dice_jobs = dice.search_jobs(resume_data)
-        logger.info(f"Found {len(dice_jobs)} jobs on Dice")
-        
-        # Test LinkedIn job search
-        logger.info("Searching LinkedIn jobs...")
-        linkedin_jobs = linkedin.search_jobs(resume_data)
-        logger.info(f"Found {len(linkedin_jobs)} jobs on LinkedIn")
-        
-        # Print job details
-        print("\n=== Job Search Results ===")
-        print(f"\nIndeed Jobs ({len(indeed_jobs)}):")
-        for job in indeed_jobs[:3]:  # Show first 3 jobs
-            print(f"- {job['title']} at {job['company']}")
-            
-        print(f"\nDice Jobs ({len(dice_jobs)}):")
-        for job in dice_jobs[:3]:  # Show first 3 jobs
-            print(f"- {job['title']} at {job['company']}")
-            
-        print(f"\nLinkedIn Jobs ({len(linkedin_jobs)}):")
-        for job in linkedin_jobs[:3]:  # Show first 3 jobs
-            print(f"- {job['title']} at {job['company']}")
-            
         print("\n✅ Job search test completed successfully!")
         
     except Exception as e:

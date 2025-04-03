@@ -7,8 +7,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
-from job_boards.linkedin import LinkedInJobBoard
-from resume_parser import ResumeParser
+from job_agent.job_boards.linkedin import LinkedInJobBoard
+from job_agent.utils.resume_parser import ResumeParser
 
 # Configure logging
 logging.basicConfig(
