@@ -1,9 +1,9 @@
 import os
 import logging
 from dotenv import load_dotenv
-from job_boards.indeed import IndeedJobBoard
-from job_boards.dice import DiceJobBoard
-from job_boards.linkedin import LinkedInJobBoard
+from job_agent.job_boards.indeed import IndeedJobBoard
+from job_agent.job_boards.dice import DiceJobBoard
+from job_agent.job_boards.linkedin import LinkedInJobBoard
 from utils.resume_parser import ResumeParser
 
 # Configure logging

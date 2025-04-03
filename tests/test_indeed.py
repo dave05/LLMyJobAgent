@@ -1,5 +1,5 @@
 import pytest
-from src.job_boards.indeed import IndeedJobBoard
+from job_agent.job_boards.indeed import IndeedJobBoard
 
 @pytest.fixture
 def indeed():

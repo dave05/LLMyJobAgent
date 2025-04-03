@@ -1,5 +1,5 @@
 import pytest
-from src.job_boards.dice import DiceJobBoard
+from job_agent.job_boards.dice import DiceJobBoard
 
 @pytest.fixture
 def dice():
