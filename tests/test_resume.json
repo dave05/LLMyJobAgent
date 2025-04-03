@@ -1,0 +1,63 @@
+{
+    "personal_info": {
+        "name": "Test User",
+        "email": "test@example.com",
+        "phone": "123-456-7890",
+        "location": "San Francisco, CA"
+    },
+    "summary": "Experienced software engineer with a strong background in full-stack development and cloud computing.",
+    "experience": [
+        {
+            "title": "Senior Software Engineer",
+            "company": "Tech Company Inc.",
+            "location": "San Francisco, CA",
+            "dates": "2020-Present",
+            "description": "Led development of cloud-native applications using Python, Java, and AWS."
+        },
+        {
+            "title": "Software Engineer",
+            "company": "Startup Co.",
+            "location": "New York, NY",
+            "dates": "2018-2020",
+            "description": "Developed full-stack web applications using React and Node.js."
+        }
+    ],
+    "education": [
+        {
+            "degree": "Master of Science in Computer Science",
+            "school": "University of Technology",
+            "location": "San Francisco, CA",
+            "dates": "2016-2018"
+        },
+        {
+            "degree": "Bachelor of Science in Computer Science",
+            "school": "State University",
+            "location": "New York, NY",
+            "dates": "2012-2016"
+        }
+    ],
+    "skills": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "SQL",
+        "MongoDB"
+    ],
+    "certifications": [
+        {
+            "name": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "date": "2021"
+        },
+        {
+            "name": "Professional Scrum Master I",
+            "issuer": "Scrum.org",
+            "date": "2020"
+        }
+    ]
+} 

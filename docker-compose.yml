@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  job_agent:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped 
