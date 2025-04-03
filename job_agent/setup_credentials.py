@@ -2,7 +2,7 @@ import os
 import sys
 import logging
 from dotenv import load_dotenv
-from utils.password_manager import PasswordManager
+from job_agent.utils.password_manager import PasswordManager
 
 # Configure logging
 logging.basicConfig(

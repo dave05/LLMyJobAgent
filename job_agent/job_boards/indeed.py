@@ -22,9 +22,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import difflib
 import spacy
-from .base import BaseJobBoard
-from utils.password_manager import PasswordManager
+from job_agent.utils.password_manager import PasswordManager
 import uuid
+from .base import BaseJobBoard
 
 logger = logging.getLogger(__name__)
 

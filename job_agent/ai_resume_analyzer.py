@@ -1,10 +1,11 @@
 import spacy
+import logging
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict, Any
-import logging
+from numpy import ndarray
+from job_agent.utils.resume_parser import ResumeParser
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from utils.resume_parser import ResumeParser
 
 logger = logging.getLogger(__name__)
 

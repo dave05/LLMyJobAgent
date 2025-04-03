@@ -18,7 +18,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
-from utils.password_manager import PasswordManager
+from job_agent.utils.password_manager import PasswordManager
 
 logger = logging.getLogger(__name__)
 

@@ -22,8 +22,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import difflib
 import spacy
+from job_agent.utils.password_manager import PasswordManager
 from .base import BaseJobBoard
-from utils.password_manager import PasswordManager
 
 logger = logging.getLogger(__name__)
 

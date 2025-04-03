@@ -1,4 +1,6 @@
-"""Job Agent package."""
+"""Job Application Agent package."""
+
+__version__ = "0.1.0"
 
 from .utils.password_manager import PasswordManager
 from .job_boards.linkedin import LinkedInJobBoard

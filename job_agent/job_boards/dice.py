@@ -15,7 +15,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException,
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from dotenv import load_dotenv
-from utils.password_manager import PasswordManager
+from job_agent.utils.password_manager import PasswordManager
 import requests
 from bs4 import BeautifulSoup
 import json
